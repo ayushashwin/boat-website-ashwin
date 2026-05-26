@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation Website</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary-fixed": "#301400", "on-secondary-fixed": "#002022", "surface-dim": "#131313", "primary-container": "#ff665d", "secondary-fixed-dim": "#00dbe9", "on-secondary-fixed-variant": "#004f54", surface: "#131313", "secondary-container": "#00eefc", "on-background": "#e5e2e1", "surface-container": "#201f1f", background: "#131313", primary: "#ffb3ac", "inverse-primary": "#c00018", "on-tertiary": "#4f2500", "surface-tint": "#ffb3ac", "surface-container-low": "#1c1b1b", "on-primary-container": "#690008", outline: "#869395", "on-secondary-container": "#00686f", "surface-container-high": "#2a2a2a", "surface-variant": "#353534", "error-container": "#93000a", "on-tertiary-container": "#4f2600", "inverse-on-surface": "#313030", "on-primary-fixed": "#410003", "primary-fixed": "#ffdad6", "tertiary-fixed-dim": "#ffb782", tertiary: "#ffb782", "on-primary-fixed-variant": "#93000f", "on-surface": "#e5e2e1", "on-tertiary-fixed-variant": "#703800", "surface-container-lowest": "#0e0e0e", "secondary-fixed": "#7df4ff", "tertiary-fixed": "#ffdcc5", "on-surface-variant": "#bcc9cb", "on-error-container": "#ffdad6", "tertiary-container": "#d9843f", "primary-fixed-dim": "#ffb3ac", "surface-bright": "#3a3939", "on-secondary": "#00363a", error: "#ffb4ab", secondary: "#d3fbff", "on-primary": "#680008", "inverse-surface": "#e5e2e1", "surface-container-highest": "#353534", "outline-variant": "#3d494b", "on-error": "#690005"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"section-gap": "120px", "margin-mobile": "20px", "margin-desktop": "80px", gutter: "24px", base: "8px"}, fontFamily: {"display-lg": ["Montserrat"], "body-md": ["Inter"], "headline-md": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "label-md": ["Inter"], "headline-lg": ["Montserrat"], "body-lg": ["Inter"], headline: ["Montserrat"], display: ["Montserrat"], body: ["Inter"], label: ["Inter"]}, fontSize: {"display-lg": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "1.3", fontWeight: "700"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["40px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}]}}}};</script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .boAt-red-glow:hover {
+            box-shadow: 0 0 20px rgba(192, 0, 20, 0.4);
+        }
+        .sonic-gradient {
+            background: linear-gradient(90deg, #c00014 0%, #00dbe9 100%);
+        }
+    /* Hide scrollbar for mobile navbar */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md transition-all duration-300 pt-4 border-b border-white/5">
+        <div class="flex flex-wrap md:flex-nowrap justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full mx-auto gap-y-4">
+            <a href="#" class="text-headline-md font-headline-lg font-black text-primary tracking-tighter cursor-pointer active:scale-95 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">boAt</a>
+            
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-6 md:gap-8 overflow-x-auto whitespace-nowrap w-full md:w-auto order-last md:order-none pb-1 md:pb-0 scrollbar-hide">
+                <a class="text-white hover:text-primary transition-colors duration-300 text-label-md font-label-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" href="#features">Engineering</a>
+                <a class="text-primary font-bold border-b-2 border-primary text-label-md font-label-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" href="#">Audio Gear</a>
+                <a class="text-white hover:text-primary transition-colors duration-300 text-label-md font-label-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" href="#community">Community</a>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex items-center bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
+                    <span class="material-symbols-outlined text-white/70 text-[20px]" data-icon="search">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md text-white placeholder-white/50 w-40" placeholder="Search..." type="text"/>
+                </div>
+                <div class="flex items-center gap-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    <span class="material-symbols-outlined cursor-pointer hover:scale-105 hover:text-primary transition-all duration-200" data-icon="shopping_cart">shopping_cart</span>
+                    <span class="material-symbols-outlined cursor-pointer hover:scale-105 hover:text-primary transition-all duration-200" data-icon="person">person</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="scroll-container relative">
+        <div class="sticky top-0 w-full h-screen overflow-hidden">
+            <canvas id="animation-canvas" class="w-full h-full"></canvas>
+            
+            <!-- Minimal Hero Overlay -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center z-20 pointer-events-none px-4">
+                <h1 class="text-[50px] md:text-[150px] font-display-lg font-black text-white/90 tracking-[0.05em] uppercase leading-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                    Nirvana
+                </h1>
+                <p class="text-[14px] md:text-[20px] font-body-md text-white/70 tracking-[0.4em] uppercase mt-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
+                    Elevate Your Senses
+                </p>
+                <!-- Minimal Buttons -->
+                <div class="flex items-center gap-4 mt-10 pointer-events-auto">
+                    <button class="bg-primary/90 backdrop-blur-sm border border-primary/20 text-white text-[13px] md:text-[15px] font-semibold tracking-[0.15em] uppercase px-8 py-3 rounded-full hover:bg-primary/80 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+                        Shop Now
+                    </button>
+                    <button class="border border-primary/30 text-primary/70 text-[13px] md:text-[15px] font-semibold tracking-[0.15em] uppercase px-8 py-3 rounded-full hover:bg-primary/10 hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content from code.html appended below the scroll container -->
+    <main class="relative z-10 w-full bg-background shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+        <!-- Featured Tech Bento Grid -->
+        <section id="features" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-dim">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <div class="flex flex-col gap-4">
+                        <h2 class="text-headline-lg font-headline-lg">Engineered for the Obsessed</h2>
+                        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                            We've pushed the boundaries of portable audio gear to ensure every beat hits different.
+                        </p>
+                    </div>
+                    <a class="text-secondary-fixed-dim font-label-md text-label-md flex items-center gap-2 hover:underline" href="#">
+                        Explore Our Engineering <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Spatial Audio Card -->
+                    <div class="md:col-span-8 bg-surface-container-low p-10 rounded-xl border border-surface-container-highest relative overflow-hidden group">
+                        <div class="relative z-10 flex flex-col justify-between h-full min-h-[320px]">
+                            <div class="max-w-md">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-md font-label-md mb-6 inline-block">360° EXPERIENCE</span>
+                                <h3 class="text-headline-lg font-headline-lg mb-4">Spatial Audio Mastery</h3>
+                                <p class="text-body-md font-body-md text-on-surface-variant">
+                                    Our proprietary sonic algorithm maps sound in a three-dimensional space, placing you at the heart of the concert hall or the battlefield.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 -right-20 -translate-y-1/2 w-1/2 h-full opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+                            <img class="w-full h-full object-contain" data-alt="A close-up side profile of a person wearing high-end wireless boAt headphones. Visible glowing sound waves in electric cyan and vibrant red circulate around the head, representing immersive 360-degree spatial audio. The lighting is dark and moody with sharp neon highlights, creating a tech-forward and futuristic vibe that emphasizes premium audio performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV2yJ2WE_v0rQSWfEhFjj7CH5evL3FsdiaDNgDGJ8Zqh5_s5kxb-L_3_yDPHRTnTfulOQC9CK5TlhvWrQCT8OvFew3095WlaEjQMTDozSySbNqEK_uHwJmoVTqqH4njSYj_i2beqtQ9pb7vsNbsP5ODSjzBEyiuF4TYJwUd5ycsxyFurxS-5g0Aeogk7vNt954UtrNf84Lr5_TSomVK6wPemBf3SOvo3y3wjyw0Gg3iywVJmD4JCpszLAmdvJbxP3aNdVKT7-1dgDp"/>
+                        </div>
+                    </div>
+                    <!-- Battery Card -->
+                    <div class="md:col-span-4 bg-surface-container-low p-10 rounded-xl border border-surface-container-highest flex flex-col justify-between relative overflow-hidden group">
+                        <div>
+                            <span class="material-symbols-outlined text-primary text-[40px] mb-6" data-icon="bolt">bolt</span>
+                            <h3 class="text-headline-md font-headline-md mb-4">Never Stop the Beat</h3>
+                            <p class="text-body-md font-body-md text-on-surface-variant">
+                                Massive battery life that lasts as long as your journey. 5 minutes of charge gives you 3 hours of play.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-end gap-2">
+                            <div class="h-12 w-2 sonic-gradient rounded-full"></div>
+                            <div class="h-20 w-2 sonic-gradient rounded-full"></div>
+                            <div class="h-32 w-2 sonic-gradient rounded-full"></div>
+                            <div class="h-24 w-2 sonic-gradient rounded-full"></div>
+                            <div class="h-16 w-2 sonic-gradient rounded-full"></div>
+                        </div>
+                    </div>
+                    <!-- Build Card -->
+                    <div class="md:col-span-4 bg-surface-container-low p-10 rounded-xl border border-surface-container-highest group">
+                        <span class="material-symbols-outlined text-secondary-fixed-dim text-[40px] mb-6" data-icon="verified">verified</span>
+                        <h3 class="text-headline-md font-headline-md mb-4">Rebel Tough Build</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant">
+                            Aircraft-grade aluminum meets premium faux-leather for a finish that is as durable as it is comfortable.
+                        </p>
+                    </div>
+                    <!-- Connectivity Card -->
+                    <div class="md:col-span-8 bg-surface-container-low p-10 rounded-xl border border-surface-container-highest flex flex-col md:flex-row items-center gap-10 group overflow-hidden">
+                        <div class="flex-1">
+                            <h3 class="text-headline-lg font-headline-lg mb-4">Hyper-Sync Connection</h3>
+                            <p class="text-body-md font-body-md text-on-surface-variant">
+                                Low latency mode for lag-free gaming and dual-pairing capability to switch between your laptop and phone seamlessly.
+                            </p>
+                            <button class="mt-8 flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                                View Specs <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                            </button>
+                        </div>
+                        <div class="w-full md:w-1/3 bg-surface-container-high rounded-lg p-6 rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                            <img class="w-full h-auto rounded shadow-2xl" data-alt="Detailed macro photography of the internal components of high-end boAt headphones, focusing on the circuit board and gold-plated connectors. The scene is lit with cool blue and sharp red accent lights, highlighting the precision of the hardware. The aesthetic is clean, professional, and industrial, showcasing the reliable audio engineering of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE4R09XXhrg-fRdb0iXwNVXYqaAl7M_DwOwqXK5bCKrkqiFGN5bNv88vZbaPTkqPaoR9NlRlzdt2oNxHRIE4ItNIyiB8PwDw3klgHGPJDyVG08sm_PbhRuDIUERpm1tT340FjZD6oaowh9krZnrRSs9nUq-ONfEzmXG3JywCn8jaMMvHtKhOA0ut98AJWBWz9i-TK5GX8HxpJgfj6vLYu2m4nvLiMwqmP4vHq7kFbwtcvOwXOOEBLDgRMk_ABSFkcm_0o49Hf-ugHZ"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter / CTA -->
+        <section id="community" class="py-section-gap bg-background border-y border-surface-container-highest">
+            <div class="px-margin-mobile md:px-margin-desktop text-center max-w-4xl mx-auto flex flex-col gap-10 items-center">
+                <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg">Ready to Plug into Nirvana?</h2>
+                <p class="text-body-lg font-body-lg text-on-surface-variant">
+                    Join our community of 10M+ boAtheads and get exclusive access to new launches and special offers.
+                </p>
+                <div class="w-full flex flex-col md:flex-row gap-4 max-w-lg">
+                    <input class="flex-1 bg-surface-container-low border border-outline-variant rounded-full px-8 py-4 focus:border-primary focus:ring-1 focus:ring-primary text-on-surface outline-none" placeholder="Enter your email" type="email"/>
+                    <button class="bg-inverse-primary text-white font-bold px-10 py-4 rounded-full hover:scale-105 active:scale-95 transition-transform">Join Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="w-full pt-section-gap pb-8 bg-surface-container-lowest dark:bg-surface-container-lowest">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-full mx-auto">
+                <div class="col-span-12 md:col-span-4 mb-10 md:mb-0">
+                    <div class="text-headline-md font-headline-lg font-black text-primary dark:text-primary mb-6">boAt</div>
+                    <p class="text-body-md font-body-md text-on-surface-variant max-w-xs">
+                        The world's leading audio-wear brand, bringing you the best in sound engineering and youth lifestyle.
+                    </p>
+                    <div class="flex gap-4 mt-8">
+                        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+                        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="forum">forum</span>
+                    </div>
+                </div>
+                <div class="col-span-6 md:col-span-2">
+                    <h4 class="text-label-md font-label-md text-on-surface font-bold uppercase mb-6 tracking-wider">Company</h4>
+                    <ul class="flex flex-col gap-4 text-body-md font-body-md text-on-surface-variant">
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Support</li>
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Track Order</li>
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Warranty Policy</li>
+                    </ul>
+                </div>
+                <div class="col-span-6 md:col-span-2">
+                    <h4 class="text-label-md font-label-md text-on-surface font-bold uppercase mb-6 tracking-wider">Explore</h4>
+                    <ul class="flex flex-col gap-4 text-body-md font-body-md text-on-surface-variant">
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Bulk Orders</li>
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Service Centers</li>
+                        <li class="hover:text-secondary-fixed transition-colors cursor-pointer">Newsroom</li>
+                    </ul>
+                </div>
+                <div class="col-span-12 md:col-span-4">
+                    <h4 class="text-label-md font-label-md text-on-surface font-bold uppercase mb-6 tracking-wider">Stay Connected</h4>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-6">Subscribe for early access to sales and exclusive content.</p>
+                    <div class="flex items-center border-b border-surface-container-highest pb-2">
+                        <input class="bg-transparent border-none focus:ring-0 text-on-surface w-full" placeholder="Your Email" type="text"/>
+                        <span class="material-symbols-outlined text-primary cursor-pointer" data-icon="send">send</span>
+                    </div>
+                </div>
+                <div class="col-span-12 mt-20 pt-8 border-t border-surface-container-low flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-label-md font-label-md text-on-surface-variant opacity-60 text-center">© 2024 Imagine Marketing Limited. All Rights Reserved.</p>
+                    <div class="flex gap-8 text-label-md font-label-md text-on-surface-variant opacity-60">
+                        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                        <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

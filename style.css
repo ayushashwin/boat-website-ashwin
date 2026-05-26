@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overscroll-behavior-y: none; /* Prevents mobile pull-to-refresh */
+    touch-action: pan-y; /* Allows vertical scroll, prevents pinch-zoom */
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Prevents accidental highlighting */
+}
+
+.scroll-container {
+    height: 400vh; /* Determines the scroll length */
+}
+
+#animation-canvas {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: contrast(1.05) saturate(1.1) blur(0.5px);
+    /* object-fit equivalent for canvas will be handled in JS */
+}
